@@ -55,7 +55,9 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+console.log("The random number generated was: " + random);
 let test = isTwo(random);
+console.log("is " + random + " equal to 2?");
 console.log(test);
 function isTwo(num){
     let number = num;
@@ -73,12 +75,20 @@ function isTwo(num){
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-let tip = calculateTip(0.15, 33.42)
-console.log(tip);
+//let tip = calculateTip(0.15, 33.42)
+//console.log(tip);
 
 function calculateTip(num1, num2){
-    let tipCal = num1 / 100;
-    let calculation = tipCal * num2;
+    console.log("Running calculateTip()");
+    console.log("The total is " + num2);
+    console.log("The tip entered is " + num1);
+    let tipCal = "0." + num1;
+    console.log("The concatenated tip is " + tipCal);
+    tipCal = parseFloat(tipCal);
+    console.log("Turning the tipCal into a number");
+    console.log(tipCal);
+    let calculation = (parseFloat(tipCal * num2).toFixed(2));
+    console.log("The calculated tip is: " + calculation);
     return calculation;
 }
 /**
@@ -108,9 +118,17 @@ alert(tipAmount);
 //applyDiscount(100, .2);
 //console.log(applyDiscount);
 function applyDiscount(num1, num2,){
+    console.log("Running applyDiscount()");
+    console.log("The original price: " + num1);
+    console.log("The discounted percent: " + num2);
     let originalPrice = num1;
-    let discountPercent = num2 / 100;
-    let appDiscount = num1 - (num1 * discountPercent);
+    let discountPercent = ("0." + num2);
+    console.log("The concatenated discount percent is " + discountPercent);
+    discountPercent = parseFloat(discountPercent);
+    console.log("Turn the discounted percent into a number")
+    console.log(discountPercent)
+    let appDiscount = (parseFloat(num1 - (num1 * discountPercent)).toFixed(2));
+    console.log("The price after discounted percent applied: " + appDiscount);
     return appDiscount;
 }
 
