@@ -9,12 +9,17 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-console.log( sayHello("codeup") );
-function sayHello(name)
-{
-    let message = "Hello " + name + "!";
+// console.log( sayHello("codeup") );
+// function sayHello(name)
+// {
+//     let message = "Hello " + name + "!";
+//     return message;
+// }
+const sayHello = (name) => {
+    let message = `Hello, ${name}!`;
     return message;
 }
+console.log( sayHello("CodeUp") );
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -87,6 +92,7 @@ function calculateTip(num1, num2){
     tipCal = parseFloat(tipCal);
     console.log("Turning the tipCal into a number");
     console.log(tipCal);
+    //if you (parseFloat instead of parseFloat( it will stay as a string with .toFixed(2)
     let calculation = (parseFloat(tipCal * num2).toFixed(2));
     console.log("The calculated tip is: " + calculation);
     return calculation;
