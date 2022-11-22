@@ -9,14 +9,11 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
-let helloMessage = sayHello("Hung");
-console.log(helloMessage);
-let myName = "Hung";
-let ourName = sayHello(myName);
-console.log(ourName);
+console.log( sayHello("codeup") );
 function sayHello(name)
 {
-    return "Hello " + name
+    let message = "Hello " + name + "!";
+    return message;
 }
 /**
  * TODO:
@@ -25,13 +22,17 @@ function sayHello(name)
  *
  * console.log 'helloMessage' to check your work
  */
-
+let helloMessage = sayHello("Hung");
+console.log(helloMessage);
 /**
  * TODO:
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
+let myName = "Hung";
+let helloMessage2 = sayHello(myName);
+console.log(helloMessage2);
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -54,14 +55,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-let x = isTwo(3);
-console.log(x);
-let y = isTwo(2);
-console.log(y);
-let i = isTwo(1);
-console.log(i);
-
-
+let test = isTwo(random);
+console.log(test);
 function isTwo(num){
     let number = num;
     let answers = num === 2;
@@ -82,7 +77,8 @@ let tip = calculateTip(0.15, 33.42)
 console.log(tip);
 
 function calculateTip(num1, num2){
-    let calculation = num1 * num2;
+    let tipCal = num1 / 100;
+    let calculation = tipCal * num2;
     return calculation;
 }
 /**
@@ -91,10 +87,10 @@ function calculateTip(num1, num2){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let total = prompt("Total Bill?")
+let total = prompt("Bill Total?")
 let tip1 = prompt("Tip percentage?");
-let billTotal = calculateTip(tip1, total);
-alert(billTotal);
+let tipAmount = "The amount of tips is " + "$" + calculateTip(tip1, total);
+alert(tipAmount);
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -113,12 +109,12 @@ alert(billTotal);
 //console.log(applyDiscount);
 function applyDiscount(num1, num2,){
     let originalPrice = num1;
-    let discountPercent = num2;
-    let appDiscount = num1 - (num1 * num2);
+    let discountPercent = num2 / 100;
+    let appDiscount = num1 - (num1 * discountPercent);
     return appDiscount;
 }
 
 let orgTotal = prompt("What is your total?");
 let orgDiscount = prompt("Discounted percent?");
 let actPrice = applyDiscount(orgTotal, orgDiscount);
-alert(actPrice);
+alert("Your total bill is " + "$" + actPrice);
