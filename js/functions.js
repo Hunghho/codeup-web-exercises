@@ -109,3 +109,16 @@ alert(billTotal);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+//applyDiscount(100, .2);
+//console.log(applyDiscount);
+function applyDiscount(num1, num2,){
+    let originalPrice = num1;
+    let discountPercent = num2;
+    let appDiscount = num1 - (num1 * num2);
+    return appDiscount;
+}
+
+let orgTotal = prompt("What is your total?");
+let orgDiscount = prompt("Discounted percent?");
+let actPrice = applyDiscount(orgTotal, orgDiscount);
+alert(actPrice);
