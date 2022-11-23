@@ -76,9 +76,9 @@ function analyzeColor(color) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-let user = prompt("What is your favorite color? ");
-let result = analyzeColor(user);
-alert(result);
+// let user = prompt("What is your favorite color? ");
+// let result = analyzeColor(user);
+// alert(result);
 /* ########################################################################## */
 
 /**
@@ -100,20 +100,34 @@ alert(result);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-console.log(calculatedTotal(1, 100));
-function calculatedTotal(luckyNumber, discountPercent){
-    if (luckyNumber == "0" && discountPercent == 100){
-        return `100%`;
-    } else if (luckyNumber == 1 && discountPercent == 100){
-        return `10%`;
-    } else if (luckyNumber == 2 && discountPercent == 100){
-        return `25%`;
-    } else if (luckyNumber == 3 && discountPercent == 100){
-        return `35%`;
-    } else if (luckyNumber == 4 && discountPercent == 100){
-        return `50%`;
-    } else {
-        return `you'll get everything for free!.`;
+let luckyNumber = Math.floor(Math.random() * 6);
+// console.log("Lucky Random number is: " + luckyNumber);
+let totalAmount = Math.floor(Math.random() * 100) + 50;
+// console.log("Random total price is: " + totalAmount);
+let walmartLuckyNumber = calculatedTotal(luckyNumber, totalAmount);
+console.log("Your new total price after discount applied: " + "$" + walmartLuckyNumber);
+function calculatedTotal(luckyNumber, totalAmount){
+    console.log("Run calculatedTotal()");
+    console.log("Your random number is: " + luckyNumber);
+    console.log("The random total price is: " + totalAmount);
+    if (luckyNumber === 0){
+        console.log("Better luck next time. You paid FULL PRICE!");
+    return (totalAmount);
+    } else if (luckyNumber === 1){
+        console.log("10% discount applied");
+        return (totalAmount * .9).toFixed(2);
+    } else if (luckyNumber === 2){
+        console.log("25% discount applied");
+        return (totalAmount * .75).toFixed(2);
+    } else if (luckyNumber === 3){
+        console.log("35% discount applied");
+        return (totalAmount * .65).toFixed(2);
+    } else if (luckyNumber === 4){
+        console.log("50% discount applied");
+        return (totalAmount * .50).toFixed(2);
+    } else if (luckyNumber === 5){
+        console.log("It's FREE!");
+        return (totalAmount * 0);
     }
 }
 /**
