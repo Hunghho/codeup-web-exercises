@@ -21,21 +21,21 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-// console.log(analyzeColor("blue"));
-// console.log(analyzeColor("green"));
-// function analyzeColor(color){
-//     if (color == "red") {
-//     return `red as the red sea`;
-//     } else if (color == "blue"){
-//         return `blue as the sky`;
-//     } else if (color == "green"){
-//         return `green like the grass`;
-//     } else if (color == "orange"){
-//         return `like an orange`;
-//     } else {
-//         return `I dont know anything about ${color}!`;
-//     }
-// }
+console.log(analyzeColor("blue"));
+console.log(analyzeColor("green"));
+function analyzeColor(color){
+    if (color == "red") {
+    return `red as the red sea`;
+    } else if (color == "blue"){
+        return `blue as the sky`;
+    } else if (color == "green"){
+        return `green like the grass`;
+    } else if (color == "orange"){
+        return `like an orange`;
+    } else {
+        return `I dont know anything about ${color}!`;
+    }
+}
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -54,8 +54,8 @@ console.log (analyzeColor(randomColor));
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-// console.log(analyzeColor("blue"));
-// console.log(analyzeColor("green"));
+console.log(analyzeColor("blue"));
+console.log(analyzeColor("green"));
 function analyzeColor(color) {
     switch (color) {
         case "red":
@@ -76,9 +76,9 @@ function analyzeColor(color) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-// let user = prompt("What is your favorite color? ");
-// let result = analyzeColor(user);
-// alert(result);
+let user = prompt("What is your favorite color? ");
+let result = analyzeColor(user.toLowerCase());
+alert(result);
 /* ########################################################################## */
 
 /**
@@ -102,10 +102,13 @@ function analyzeColor(color) {
  */
 let luckyNumber = Math.floor(Math.random() * 6);
 // console.log("Lucky Random number is: " + luckyNumber);
-let totalAmount = Math.floor(Math.random() * 100) + 50;
+// let totalAmount = Math.floor(Math.random() * 100) + 50;
+let totalAmount = prompt("What is your total bill?");
 // console.log("Random total price is: " + totalAmount);
+let luckyNumberPrompt = alert("Your lucky number is: " + luckyNumber);
+let originalPrice = alert("Your original price is : " + "$" + totalAmount);
 let walmartLuckyNumber = calculatedTotal(luckyNumber, totalAmount);
-console.log("Your new total price after discount applied: " + "$" + walmartLuckyNumber);
+let displayFinalPrice = alert("Your new total price after discount applied: " + "$" + walmartLuckyNumber);
 function calculatedTotal(luckyNumber, totalAmount){
     console.log("Run calculatedTotal()");
     console.log("Your random number is: " + luckyNumber);
@@ -159,3 +162,34 @@ function calculatedTotal(luckyNumber, totalAmount){
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+let enterNumber = confirm("Would you like to enter a number?");
+
+if (enterNumber == true) {
+    let number = prompt("Enter a number: ");
+    number = parseFloat(number);
+
+    if (isNaN(number)) {
+        alert("Not a number");
+
+    } else {
+
+        if (number % 2 == 0) {
+            alert("Your number is Even");
+        } else {
+            alert("Your number is Odd");
+        }
+
+        alert("Your enter number plus 100 equal " + parseFloat(number + 100));
+
+        if (number >= 0) {
+            alert("Your number is Positive");
+        } else {
+            alert("Your number is Negative");
+        }
+
+    }
+
+} else {
+    alert("Good Bye!");
+}
