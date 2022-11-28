@@ -21,21 +21,21 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-console.log(analyzeColor("blue"));
-console.log(analyzeColor("green"));
-function analyzeColor(color){
-    if (color == "red") {
-    return `red as the red sea`;
-    } else if (color == "blue"){
-        return `blue as the sky`;
-    } else if (color == "green"){
-        return `green like the grass`;
-    } else if (color == "orange"){
-        return `like an orange`;
-    } else {
-        return `I dont know anything about ${color}!`;
-    }
-}
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("green"));
+// function analyzeColor(color){
+//     if (color == "red") {
+//     return `red as the red sea`;
+//     } else if (color == "blue"){
+//         return `blue as the sky`;
+//     } else if (color == "green"){
+//         return `green like the grass`;
+//     } else if (color == "orange"){
+//         return `like an orange`;
+//     } else {
+//         return `I dont know anything about ${color}!`;
+//     }
+// }
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -54,8 +54,8 @@ console.log (analyzeColor(randomColor));
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-console.log(analyzeColor("blue"));
-console.log(analyzeColor("green"));
+// console.log(analyzeColor("blue"));
+// console.log(analyzeColor("green"));
 function analyzeColor(color) {
     switch (color) {
         case "red":
@@ -66,6 +66,7 @@ function analyzeColor(color) {
             break;
         case "orange":
             return "orange like the fruit";
+            break;
         default:
             return "I dont know anything about " + color;
     }
@@ -76,7 +77,7 @@ function analyzeColor(color) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-let user = prompt("What is your favorite color? ");
+let user = prompt("What is your favorite color?");
 let result = analyzeColor(user.toLowerCase());
 alert(result);
 /* ########################################################################## */
@@ -100,38 +101,71 @@ alert(result);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-let luckyNumber = Math.floor(Math.random() * 6);
-// console.log("Lucky Random number is: " + luckyNumber);
-// let totalAmount = Math.floor(Math.random() * 100) + 50;
-let totalAmount = prompt("What is your total bill?");
-// console.log("Random total price is: " + totalAmount);
-let luckyNumberPrompt = alert("Your lucky number is: " + luckyNumber);
-let originalPrice = alert("Your original price is : " + "$" + totalAmount);
-let walmartLuckyNumber = calculatedTotal(luckyNumber, totalAmount);
-let displayFinalPrice = alert("Your new total price after discount applied: " + "$" + walmartLuckyNumber);
-function calculatedTotal(luckyNumber, totalAmount){
-    console.log("Run calculatedTotal()");
-    console.log("Your random number is: " + luckyNumber);
-    console.log("The random total price is: " + totalAmount);
-    if (luckyNumber === 0){
-        console.log("Better luck next time. You paid FULL PRICE!");
-    return (totalAmount);
-    } else if (luckyNumber === 1){
-        console.log("10% discount applied");
-        return (totalAmount * .9).toFixed(2);
-    } else if (luckyNumber === 2){
-        console.log("25% discount applied");
-        return (totalAmount * .75).toFixed(2);
-    } else if (luckyNumber === 3){
-        console.log("35% discount applied");
-        return (totalAmount * .65).toFixed(2);
-    } else if (luckyNumber === 4){
-        console.log("50% discount applied");
-        return (totalAmount * .50).toFixed(2);
-    } else if (luckyNumber === 5){
-        console.log("It's FREE!");
-        return (totalAmount * 0);
+// let luckyNumber = Math.floor(Math.random() * 6);
+// // console.log("Lucky Random number is: " + luckyNumber);
+// // let totalAmount = Math.floor(Math.random() * 100) + 50;
+// let totalAmount = prompt("What is your total bill?");
+// // console.log("Random total price is: " + totalAmount);
+// let luckyNumberPrompt = alert("Your lucky number is: " + luckyNumber);
+// let originalPrice = alert("Your original price is : " + "$" + totalAmount);
+// let walmartLuckyNumber = calculatedTotal(luckyNumber, totalAmount);
+// let displayFinalPrice = alert("Your new total price after discount applied: " + "$" + walmartLuckyNumber);
+// function calculatedTotal(luckyNumber, totalAmount){
+//     console.log("Run calculatedTotal()");
+//     console.log("Your random number is: " + luckyNumber);
+//     console.log("The random total price is: " + totalAmount);
+//     if (luckyNumber === 0){
+//         console.log("Better luck next time. You paid FULL PRICE!");
+//     return (totalAmount);
+//     } else if (luckyNumber === 1){
+//         console.log("10% discount applied");
+//         return (totalAmount * .9).toFixed(2);
+//     } else if (luckyNumber === 2){
+//         console.log("25% discount applied");
+//         return (totalAmount * .75).toFixed(2);
+//     } else if (luckyNumber === 3){
+//         console.log("35% discount applied");
+//         return (totalAmount * .65).toFixed(2);
+//     } else if (luckyNumber === 4){
+//         console.log("50% discount applied");
+//         return (totalAmount * .50).toFixed(2);
+//     } else if (luckyNumber === 5){
+//         console.log("It's FREE!");
+//         return (totalAmount * 0);
+//     }
+// }
+function calculateTotal (luckyNumber, total){
+    let discount, discountedPrice;
+    switch (luckyNumber) {
+        case 0:
+            discount = 0;
+            break;
+        case 1:
+            discount = 0.1;
+            break;
+        case 2:
+            discount = 0.25;
+            break;
+        case 3:
+            discount = 0.35;
+            break;
+        case 4:
+            discount = 0.50;
+            break;
+        case 5:
+            discount = 1;
+            break;
+        default:
+            return "No lucky number!";
+            break;
     }
+
+    if ( !isNaN(total) ){
+        discountedPrice = total * (1- discount);
+    } else {
+        return "No number"
+    }
+        return discountedPrice.toFixed(2);
 }
 /**
  * TODO:
@@ -142,7 +176,12 @@ function calculatedTotal(luckyNumber, totalAmount){
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+let luckyNumber = Math.floor(Math.random() * 6);
+let userNumberPrompt = prompt("What was the total of your bill");
+let userResult = calculateTotal(luckyNumber, userNumberPrompt);
+alert(`Your lucky number was ${luckyNumber}.
+The price before the discount was $${userNumberPrompt}.
+The price after the discount is $${userResult}.`)
 
 /**
  * TODO:
@@ -171,16 +210,14 @@ if (enterNumber == true) {
 
     if (isNaN(number)) {
         alert("Not a number");
-
     } else {
-
         if (number % 2 == 0) {
             alert("Your number is Even");
         } else {
             alert("Your number is Odd");
         }
-
-        alert("Your enter number plus 100 equal " + parseFloat(number + 100));
+    let plus100 = parseFloat(number + 100);
+        alert("Your enter number plus 100 equal " + plus100);
 
         if (number >= 0) {
             alert("Your number is Positive");
