@@ -72,29 +72,78 @@ function isMultipleOf(target, n){
 }
 
 function isTrue(boolean){
-    return boolean === "0";
+    return boolean === true;
 }
 
 function isFalse(boolean){
-    return boolean === 0;
+    return boolean === false;
 }
 
-console.log("34");
+console.log(sTruthy(0));
 function sTruthy(input){
     //remember that values other than true will behave like true
-    if (input === "0"){
-        return "truly";
+    if (input){
+        return true;
     } else {
-        return "falsy";
+        return false;
     }
 }
 
-console.log("abc");
+console.log(isFalsy(0));
 function isFalsy(input){
     //remember that values other than false behave like false
-    if (input === 0){
-        return "falsy";
+    if (!input){
+        return true;
     } else {
-        return "truly";
+        return false;
     }
 }
+
+console.log(isVowel("b"))
+function isVowel(letter){
+   letter.toLowerCase();
+   if (letter === "a" | "e" | "i" | "o" | "u"){
+       return "is Vowel";
+   } else {
+       return "not Vowel";
+   }
+}
+
+console.log(isConsonant("b"))
+function isConsonant(letter){
+    letter.toLowerCase()
+    if (letter !== "a" | "e" | "i" | "o" | "u"){
+        return "is a consonant";
+    } else {
+        return "is not a consonant";
+    }
+}
+
+// Create a function, removeFirstCharacter, that takes in a string
+// and returns the string with the first character
+// removed. If no input is given, return false.
+// If one character is given, return an empty string.
+// Assume only empty input or a valid string input.
+
+console.log(removeFirstCharacter("bob"), "ob"); // ‘ob’
+console.log(removeFirstCharacter("jason"), "ason");  // ‘ason’
+console.log(removeFirstCharacter("to"));  // ‘o’
+console.log(removeFirstCharacter("1")); // ‘’
+console.log(removeFirstCharacter()); // false
+console.log(removeFirstCharacter("")); // false
+console.log(removeFirstCharacter(" codeup")); // "codeup"
+console.log(removeFirstCharacter("false")); // "alse"
+
+
+function removeFirstCharacter(input){
+    if (typeof input !== "string") return false;
+    return (input.length === 0) ? false : input.slice(1);
+    // if (input.length === 0){
+    //     return false;
+    // } else {
+    //     return input.slice(1);
+    // }
+    // const output = (input.length === 0) ? input : input.slice(1);
+    // return output;
+}
+
