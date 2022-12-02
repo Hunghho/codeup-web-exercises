@@ -72,11 +72,11 @@ function isMultipleOf(target, n){
 }
 
 function isTrue(boolean){
-    return boolean === true;
+    return typeof boolean == "boolean";
 }
 
 function isFalse(boolean){
-    return boolean === false;
+    return typeof boolean !== "boolean";
 }
 
 console.log(sTruthy(0));
@@ -146,4 +146,26 @@ function removeFirstCharacter(input){
     // const output = (input.length === 0) ? input : input.slice(1);
     // return output;
 }
+console.log(isCapital("hello world"));
+console.log(isCapital("Hello World"));
+function isCapital(input){
+    input = input.toUpperCase();
+    return input;
+}
 
+function isLowerCase(input){
+    input = input.toLowerCase();
+    return input;
+}
+console.log(hasLowerCase("Hello World"));
+console.log(hasLowerCase("HELLO WORLD"));
+console.log(hasLowerCase("hello world"));
+function hasLowerCase(input){
+    return input.toUpperCase() !== input;
+}
+
+console.log(isSpace("hello world"));
+function isSpace(input){
+    return input === " ";
+    return true;
+}

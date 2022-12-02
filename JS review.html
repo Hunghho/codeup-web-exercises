@@ -260,31 +260,53 @@
         console.log(abbrevToDay("adc"), false);
         function abbrevToDay(input){
             input = input.toLowerCase();
-            switch (input) {
-                case "mon":
-                    return "Monday";
-                    break;
-                case "tue":
-                    return "Tuesday";
-                    break;
-                case "wed":
-                    return "Wednesday";
-                    break;
-                case "thu":
-                    return "Thursday";
-                    break;
-                case "fri":
-                    return "Friday";
-                    break;
-                case "sat":
-                    return "Saturday";
-                    break;
-                case "sun":
-                    return "Sunday";
-                    break;
-                default:
-                    return false;
+            if (input === "mon") {
+            return "Monday";
             }
+            if (input === "tue") {
+            return "Tuesday";
+                }
+            if (input === "wed") {
+            return "Wednesday";
+            }
+            if (input === "thu") {
+            return "Thursday";
+            }
+            if (input === "fri") {
+            return "Friday";
+            }
+            if (input === "sat") {
+            return "Saturday";
+            }
+            if (input === "sun"){
+            return "Sunday";
+            }
+
+            // switch (input) {
+            //     case "mon":
+            //         return "Monday";
+            //         break;
+            //     case "tue":
+            //         return "Tuesday";
+            //         break;
+            //     case "wed":
+            //         return "Wednesday";
+            //         break;
+            //     case "thu":
+            //         return "Thursday";
+            //         break;
+            //     case "fri":
+            //         return "Friday";
+            //         break;
+            //     case "sat":
+            //         return "Saturday";
+            //         break;
+            //     case "sun":
+            //         return "Sunday";
+            //         break;
+            //     default:
+            //         return false;
+            // }
 
         }
 
