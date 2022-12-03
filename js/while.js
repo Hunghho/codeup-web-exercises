@@ -4,14 +4,14 @@
 // let i = 1
 
 
-function poop() {
+function whileLoop() {
     let i = 1
     while (i <= 65536) {
         console.log(i);
         i *= 2
     }
 }
-poop();
+whileLoop();
 
 
 //     var i = 0;

@@ -1,17 +1,18 @@
 'use strict';
-
+//While loop
 let iteration = 0;
 while (iteration < 10) {
     console.log(`while loop #${iteration +1}`);
     iteration++;
 }
-
+//Do While loop
 iteration = 0;
         do {
             console.log(`do-while loop #${iteration + 1}`);
             iteration++;
         } while (iteration < 10);
 
+// For loop (initialize; test; increment) { what you want to do over and over again }
 for (let i = 0; i < 10; i++) {
     console.log(`For loop #${i + 1}`);
 
@@ -32,7 +33,7 @@ for (let i = 0; i < array.length; i++) {
         fruitMessage(array[i]);
     }
 }
-//added function inside For loop
+//added function and call it inside For loop
 function fruitMessage(input){
     console.log(`${input} are awesome`);
 }

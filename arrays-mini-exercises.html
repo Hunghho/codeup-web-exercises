@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<h1>Array</h1>
+
+<script>
+  let characters = ['Luke', 'Leia', 'Han', 'Chewie'];
+  console.log(characters);
+  console.log(characters.length); // 4
+  console.log(characters[0] ); //Luke
+// to add more name to the array use .push() will add name to the next list
+  characters.push('Anakin');
+  characters.push('Obiwan');
+  console.log( characters );
+// to remove the last item from the array use .pop() no need to label what name to be removed, .pop() will remove the name starting from the top of the list
+  characters.pop();
+  characters.pop();
+  console.log(characters);
+// to add name to the left of the array use .unshift()
+  characters.unshift('C3P0');
+  characters.unshift('R2D2'); // R2D2 added to the first of the array because it was added after C3P0
+  console.log(characters);
+// to remove the first item from the array use .shift()
+  characters.shift(); // with .shift() you can recall it value
+  characters.shift();
+  console.log(characters);
+
+// us .splice() to remove item and add manually in the array
+  let characters1 = ['Luke', 'Leia', 'Han', 'Chewie'];
+  console.log(characters1);
+
+  characters1.splice(0, 1, 'Rey'); // starting at Luke, removing 1 item (Luke)
+  console.log(characters1);
+  characters1.splice(1, 2, 'Kylo');
+  console.log(characters1);
+
+// iterate arrays
+
+  let shapes = ['square', 'rectangle', 'circle', 'triangle'];
+  console.log(shapes);
+  // loop through the array and log the values
+  // for (var i = 0; i < shapes.length; i++) {
+  //     console.log('The shape at index ' + i + ' is: ' + shapes[i]);
+  // }
+// For-Each Loop .forEach
+  shapes.forEach(function(shape) {
+      console.log('Here is a lovely shape: ' + shape + '.');
+  });
+// sort and reverse array
+  shapes.reverse();
+  console.log(shapes);
+  shapes.sort();
+  console.log(shapes);
+
+// working with For loop and array
+  let names = ['Hung Ho', 'Vanna Ho', 'Kyle Ho', 'Jayson Ho', 'Rolex Ho'];
+  let numNames = names.length;
+
+  for (let i = 0; i < numNames; i++ ){
+      console.log(names[i].toUpperCase());
+  }
+
+</script>
+</body>
+</html>
