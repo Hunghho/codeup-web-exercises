@@ -42,5 +42,10 @@ do {
     let stockLeftOver = i - sellingCones; // declaring new value for stock minus costumer brought
     i = stockLeftOver; // recalling shock from leftover
     console.log(stockLeftOver);
+    if (stockLeftOver === 0){
+        console.log(`Yay! I sold them all!`);
+    } else if (stockLeftOver < sellingCones) {
+        console.log(`Cannot sell you ${sellingCones} cones I only have ${stockLeftOver}...`);
+    }
 
 } while (i > 5); //loop stop below 5
