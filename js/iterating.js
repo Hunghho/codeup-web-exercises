@@ -48,9 +48,19 @@ names.forEach(function (item, index, array){
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    let names1 = ['Hung Ho', 'Vanna Ho', 'Kyle Ho', 'Jayson Ho', 'Rolex Ho'];
-    let numNames1 = names1.length;
-    for(let i = 0; i < numNames1; i++){
-
+    let num = [1, 2, 3, 4, 5]
+    function first(input){
+        console.log(input[0]);
     }
+    first(num);
+
+    function second(input){
+        console.log(input[1]);
+    }
+    second(num);
+
+    function last(input){
+        console.log(input[4]);
+    }
+    last(num);
 })();
