@@ -204,13 +204,19 @@
             age: 43
         }
     ]
-
-    for(let i = 0 ; i < users.length ; i++){
-        console.log(users[i].givenName);
-        }
+    // console.log(users[0].givenName);
+    // console.log(users[1].givenName);
+    // console.log(users[2].givenName);
     // 0. Console.log each name
     // 1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
-
+    // for(let i = 0 ; i < users.length ; i++){
+    //     console.log(users[i].givenName);
+    // }
+    let names = '';
+    users.forEach(function (user){
+        names += user.givenName + ' ';
+    })
+    console.log(names.trim());
     // 2. Change the names of all users to "John Doe"
     // users.forEach(function(user){
     //     user.givenName = "John Doe";
@@ -221,7 +227,7 @@
     users.forEach(function(user){
         user.age = user.age + 1;
     });
-
+    console.log(users);
     // Can you accomplish each step using iteration?
 
 
@@ -236,9 +242,13 @@
     // log the average age of all users
     console.log(ageSum / users.length);
     // log all the user information in the following format...
-    for(let i = 0 ; i < users.length ; i++){
-        console.log("user: " + users[i].givenName + " | " + "age: " + users[i].age);
-    }
+    // for(let i = 0 ; i < users.length ; i++){
+    //     console.log("user: " + users[i].givenName + " | " + "age: " + users[i].age);
+    // }
+
+    users.forEach(function (user){
+        console.log(`user: ${user.givenName} | age: ${user.age}`);
+    })
     /*
         user: Sam | age: 21
         user: Cathy | age: 34
@@ -246,12 +256,25 @@
      */
 
     // log the name of the longest given name of a user
-    for(let i = 0 ; i < users.length ; i++){
 
-    }
-
-
-
+    // let nameLength = 0;
+    // let longNameObj = {};
+    // // let name = users;
+    // for(let i = 0 ; i < users.length ; i++) {
+    //     if (users[i].givenName.length > nameLength){
+    //         nameLength = users[i].givenName.length;
+    //         longNameObj = users[i];
+    //     }
+    // }
+    //
+    // console.log(longNameObj);
+    let nameLength = ''
+    users.forEach(function (user){
+        if(user.givenName.length > nameLength.length){
+            nameLength = user.givenName;
+        }
+    })
+    console.log(nameLength)
 
 
 
@@ -264,7 +287,7 @@
     //     ageInYears: 4,
     //     species: 'Dog'
     // };
-
+    //
     // console.log(Object.keys(pet1));
 
 
