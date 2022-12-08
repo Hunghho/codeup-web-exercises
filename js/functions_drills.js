@@ -9,6 +9,11 @@ function isOdd(number){
   }
 }
 
+function isNumeric(input) {
+    return !isNaN(parseFloat(input));
+}
+isNumeric("34")
+
 console.log(isEven( 28));
 
 function isEven(number){
