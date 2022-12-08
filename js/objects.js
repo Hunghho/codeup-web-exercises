@@ -14,9 +14,8 @@
     let person = {
         firstName: "Hung",
         lastName: "Ho",
-        fullName: function () { return this.firstName + " " + this.lastName;
-
-        }
+        fullName: function () { return this.firstName + " " + this.lastName;},
+        sayHello: function () { return "Hello from" + this.fullName();}
     }
     console.log(person.fullName());
     /**
@@ -28,13 +27,8 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    person.sayHello = function () {
-        return `Hello from ${this.fullName()}!`;
 
-    }
     console.log(person.sayHello());
-    person.middleName = "Hai";
-    console.log(person);
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -50,15 +44,6 @@
      * and console.log the relevant messages for each person
      */
 
-    function hebDiscount(amountPay) {
-        if (typeof amountPay === "number") {
-            if (amountPay >= 200) {
-                return "12% is applied $" + (amountPay * (1 - .12)).toFixed(2);
-            } else {
-                return "No discount applied $" + amountPay.toFixed(2);
-            }
-        }
-    }
 
     // console.log(name1 + "" + ", you paid: " + cameronPay + hebDiscount(cameronPay));
     // console.log(name2 + "" + ", you paid: " + ryanPay +hebDiscount(ryanPay));
