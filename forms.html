@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <title>Register With Us</title>
 </head>
+<body>
 <main>
   <h1>Register With Us</h1>
   <form method="POST" action="https://request-inspector.glitch.me/">
-    <input id="email" name="email" type="email" placeholder="Enter email"/>
-    <input id="password" name="password" type="password" placeholder="Enter password"/>
+    <div><input id="email" name="email" type="email" placeholder="Enter email"/></div>
+    <div><input id="password" name="password" type="password" placeholder="Enter password"/></div>
 
-    <p>How did you hear about us</p>
+    <textarea name="bio" id="" cols="30" rows="10" placeholder="Enter bio here" ></textarea>
 
-    Billboard <input type="radio" name="question_1" value="billboard"><br>
-    Radio advertisement <input type="radio" name="question_2" value="radio advertisement"><br>
-    Internet advertisement <input type="radio" name=question_3" value="internet advertisement"><br>
-    Other <input type="radio" name="question_4" value="other"><br>
+    <fieldset>
+      <legend>How you hear about us</legend>
+      <input id="a" type="radio" name="referral" value="billboard">
+      <label for="a">Billboard</label>
+      <br>
+      <input id="b" type="radio" name="referral" value="radio advertisement">
+      <label for="b">Radio advertisement </label>
+      <br>
+      <input id="c" type="radio" name="referral" value="internet advertisement">
+      <label for="c">Internet advertisement</label>
+      <br>
+      <input id="d" type="radio" name="referral" value="other">
+      <label for="d">Other</label>
+    </fieldset>
 
-    <label for="webbrowser">What web browser are you using?</label>
+    <h4>What web browser are you using?</h4>
+    <label for="webbrowser">Browser Selection</label>
     <select id="webbrowser" name="webbrower">
       <option value="safari">Safari</option>
       <option value="edge">Edge</option>
       <option value="chrome">Chrome</option>
     </select>
     <br>
+    <br>
     <button>Submit</button>
   </form>
 </main>
-<body>
-
-
 </body>
 </html>
