@@ -1,4 +1,21 @@
-.fancy-header {
-    color: purple; /* single line comment */
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: conic-gradient(white, black);
+    background-color: black;
+    color: burlywood;
+}
+
+.column-main-header {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    color: olivedrab;
     text-decoration: underline;
 }
+
+
