@@ -41,3 +41,23 @@ a {
 a:hover {
     color: olivedrab;
 }
+
+@keyframes slidein {
+    from {
+        margin-left: 79%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+}
+
+a {
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}

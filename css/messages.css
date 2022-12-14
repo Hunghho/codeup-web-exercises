@@ -1,0 +1,35 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+div {
+   margin: .5em;
+   width: 90%;
+    padding: .5em;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.informational{
+    background-color: #D0DDFC;
+    color: #423C97;
+}
+
+.success {
+    background-color: #D6F2DC;
+    color: #60966F;
+}
+.warning {
+    background-color: #FCFBCE;
+    color: #978941;
+}
+
+.error {
+    background-color: #F4D4D7;
+    color: #7F2F3D;
+}
