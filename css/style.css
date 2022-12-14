@@ -5,6 +5,7 @@
     background-image: conic-gradient(white, black);
     background-color: black;
     color: burlywood;
+    font-family: Arial sans-serif;
 }
 
 .column-main-header {
@@ -18,4 +19,25 @@
     text-decoration: underline;
 }
 
+li {
+    list-style-type: circle;
+}
 
+td {
+
+    padding: 0;
+    margin: 0;
+}
+
+tr {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: burlywood;
+}
+
+a:hover {
+    color: olivedrab;
+}
