@@ -142,3 +142,4 @@ let orgTotal = prompt("What is your total?");
 let orgDiscount = prompt("Discounted percent?");
 let actPrice = applyDiscount(orgTotal, orgDiscount);
 alert("Your total bill is " + "$" + actPrice);
+
