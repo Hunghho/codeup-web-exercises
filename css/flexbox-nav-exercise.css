@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    background-color: lightgrey;
+    height: 6em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-family: Work Sans;
+    display: inline-block;
+    padding: .4em;
+}
+
+nav a:hover {
+    background: blue;
+}
+
+nav li:nth-child(5){
+    font-size: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+}
+
+img {
+    width: 15px;
+    height: 15px;
+}
