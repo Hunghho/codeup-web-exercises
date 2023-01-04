@@ -174,17 +174,47 @@
 //     return str.replaceAll("ei", "ie");
 // }
 
-console.log(iBeforeE("height"))
+// console.log(iBeforeE("height"))
+//
+// function iBeforeE(str){
+//     let result = "";
+//     for (let i = 0 ; i < str.length ; i += 1){
+//         if(str[i] + str[i +1] === "ei") {
+//             result += "ie";
+//             i++;
+//         } else {
+//             result += str[i];
+//         }
+//     }
+//     return result;
+// }
 
-function iBeforeE(str){
-    let result = "";
-    for (let i = 0 ; i < str.length ; i += 1){
-        if(str[i] + str[i +1] === "ei") {
-            result += "ie";
-            i++;
-        } else {
-            result += str[i];
+// function hasVowels(input){
+//     let vowels = "aeiou";
+//     for(let i = 0 ; i < input.length ; i += 1){
+//         if(vowels.indexOf(input[i].toLowerCase()) !== -1){
+//             return true;
+//         }
+//     } return false;
+// }
+//
+// console.log(hasVowels("HELLO"));
+
+// Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+function filterList(num){
+    let numbers = [];
+    for (let i = 0 ; i < num.length ; i += 1){
+        if(typeof num[i] !== "string"){
+            numbers.push(num[i]);
         }
-    }
-    return result;
+    } return numbers;
+
 }
+
+console.log(filterList([1,2,"a","b"]));
+
+// filterList([1,2,‘a’,‘b’]) // returns [1,2]
+// filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
+// filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
+
