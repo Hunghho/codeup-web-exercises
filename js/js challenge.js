@@ -202,19 +202,29 @@
 
 // Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
 
-function filterList(num){
-    let numbers = [];
-    for (let i = 0 ; i < num.length ; i += 1){
-        if(typeof num[i] !== "string"){
-            numbers.push(num[i]);
-        }
-    } return numbers;
-
-}
-
-console.log(filterList([1,2,"a","b"]));
+// function filterList(num){
+//     let numbers = [];
+//     for (let i = 0 ; i < num.length ; i += 1){
+//         if(typeof num[i] !== "string"){
+//             numbers.push(num[i]);
+//         }
+//     } return numbers;
+//
+// }
+//
+// console.log(filterList([1,2,"a","b"]));
 
 // filterList([1,2,‘a’,‘b’]) // returns [1,2]
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
+
+let str = "banana";
+let strArray = str.split("");
+let fistStr = strArray.shift();
+let lastStr = strArray.pop();
+let joinStr = fistStr + lastStr;
+
+console.log(joinStr);
+
+
 
