@@ -218,13 +218,18 @@
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
 
-function firstToLast (input){
-    input.push(input.shift());
-    return input;
+function sumAll(input){
 
+    let sum = 0;
+    for (let i = 0 ; i < input.length ; i += 1) {
+        sum += input[i];
+    }
+    return sum;
 }
 
-console.log(firstToLast ([1, 2, 3, 4]));
+
+
+console.log(sumAll([1, 2, 3, 4]));
 
 
 
