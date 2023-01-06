@@ -218,13 +218,13 @@
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
 
-let str = "banana";
-let strArray = str.split("");
-let fistStr = strArray.shift();
-let lastStr = strArray.pop();
-let joinStr = fistStr + lastStr;
+function firstToLast (input){
+    input.push(input.shift());
+    return input;
 
-console.log(joinStr);
+}
+
+console.log(firstToLast ([1, 2, 3, 4]));
 
 
 
