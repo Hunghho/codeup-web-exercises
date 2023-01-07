@@ -218,17 +218,23 @@
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
 
-function getHighesNumber(input){
+function onlyOddNumbers(input){
+    let oddNum = [];
     let sortArray = input.sort();
     console.log(sortArray);
-    return sortArray[sortArray.length -1];
+    for (let i = 0 ; i < input.length ; i += 1){
+        if(input[i] % 2 !== 0){
+            console.log(input[i]);
+            oddNum.push(input[i]);
+        }
+    } return oddNum;
 }
 
 
 
 
 
-console.log(getHighesNumber([1, 6, 2, 4]));
+console.log(onlyOddNumbers([1, 6, 2, 4]));
 
 
 
