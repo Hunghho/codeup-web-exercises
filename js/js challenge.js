@@ -218,23 +218,16 @@
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
 
-function onlyOddNumbers(input){
-    let oddNum = [];
-    let sortArray = input.sort();
-    console.log(sortArray);
+function onlyPositiveNumbers(input){
+    let posNum = [];
     for (let i = 0 ; i < input.length ; i += 1){
-        if(input[i] % 2 !== 0){
-            console.log(input[i]);
-            oddNum.push(input[i]);
+        if(input[i] > 0){
+            posNum.push(input[i]);
         }
-    } return oddNum;
+    } return posNum;
 }
 
-
-
-
-
-console.log(onlyOddNumbers([1, 6, 2, 4]));
+console.log(onlyPositiveNumbers([1, -6, 2, 4, -3, 5, -7, 8,]));
 
 
 
