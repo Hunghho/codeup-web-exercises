@@ -218,16 +218,47 @@
 // filterList([1,‘a’,‘b’,0,15]) // returns [1,0,15]
 // filterList([1,2,‘aasf’,‘1’,‘123’,123]) // returns [1,2,123]
 
-function onlyPositiveNumbers(input){
-    let posNum = [];
-    for (let i = 0 ; i < input.length ; i += 1){
-        if(input[i] > 0){
-            posNum.push(input[i]);
-        }
-    } return posNum;
+
+// function hasEvens(input){
+//     let evenNums = [];
+//     for (let i = 0 ; i < input.length ; i += 1){
+//         if(input[i] % 2 === 0){
+//             evenNums.push(input[i]);
+//         }
+//     } return evenNums.length;
+// }
+//
+//
+// console.log(hasEvens([1, 2, 3, 4]));
+
+// Create a function, zipArrays, that takes two array inputs of the same length and returns an array with the elements of both arrays alternating in the order of first[0], second[0], first[1], second[1], etc. If both arrays are empty, return an empty array.
+//
+
+function zipArrays(input1, input2){
+
+    let newArray = [];
+    for (let i = 0 ; i < input1.length ; i += 1){
+        newArray.push(input1[i]);
+        newArray.push(input2[i]);
+    } return newArray;
 }
 
-console.log(onlyPositiveNumbers([1, -6, 2, 4, -3, 5, -7, 8,]));
+
+console.log(zipArrays([], [])); // returns []
+console.log(zipArrays([1], [2])); // returns [1, 2]
+console.log(zipArrays(['a', 'b'], ['c', 'd'])); // returns... ['a', 'c', 'b', 'd']
+console.log(zipArrays([1,2,'a','b'], ['bob', null, 'sally', 25])); // returns...
+//
+//     [
+//     1,
+//         'bob',
+//         2,
+//         null,
+//         'a',
+//         'sally',
+//         'b',
+//         25
+//     ]
 
 
 
