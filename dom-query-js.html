@@ -26,6 +26,12 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id = btn1>Button 1</button>
+<button id = btn2>Button 2</button>
+<button id = btn3>Button 3</button>
+<button id = btn4>Button 4</button>
+
+
 <script>
     (function() {
         "use strict";
@@ -34,6 +40,7 @@
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         mainHeader.innerHTML = "JavaScript is Cool";
+       
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
@@ -62,6 +69,32 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs[0].innerHTML = "Mission Accomplished"
+
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+
+        let yellowOn = false;
+
+        const btn = function (event){
+           
+            if(yellowOn === false){
+                mainHeader.style.color = "yellow";
+                yellowOn = true;
+            } else {
+                mainHeader.style.color = "black";
+                yellowOn = false;
+            }
+            }   
+       
+        btn1.addEventListener("click", btn);
+        
+        
+
+        
+        
+        
+
+
 
     })();
 </script>
