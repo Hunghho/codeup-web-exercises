@@ -328,7 +328,44 @@
 
 // desired output : 0, 1 ,2,  3, 4, 5, 6, 7, 8, 9
 
+// Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
 
-let a = 10 % 2;
+// function onlyPositiveEvens(input){
+//     let nums = [];
+//     for(let i = 0 ; i < input.length ; i += 1){
+//         if(input[i] > 0 && input[i] % 2 === 0){
+//             nums.push(input[i]);
+//         }
+//     } return nums;
+//
+// }
+//
+// console.log(onlyPositiveEvens([1, -2, 3]), []);
+// console.log(onlyPositiveEvens([2, -5, -6]), [2]);
+// console.log(onlyPositiveEvens([3, 3, 4, 6]), [4, 6]);
+// console.log(onlyPositiveEvens([2, 3, 4, -1, -5]), [2, 4]);
 
-console.log(a);
+// Write a function definition named shortestString that takes in an array of strings and returns the shortest string in the array.
+
+
+
+
+// function elementsTimesTwo (input){
+//     let newArray = [];
+//
+//     for (let i = 0 ; i < input.length ; i += 1){
+//
+//         newArray.push(input[i] * 2);
+//
+//     } return newArray;
+// }
+
+let elementsTimesTwo = input => input.forEach(num => {
+    let newArray = [];
+    newArray.push(num * 2);
+    return newArray;
+})
+
+console.log(elementsTimesTwo([5, 10, 15]), [10, 20, 30], "Exercise 84")
+console.log(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
+console.log(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
