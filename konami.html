@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+<div id="result"></div>
+
+<script src="./js/jquery-3.6.3.js"></script>
+<script>
+  "use strict";
+  $(document).ready(function(){
+
+    const keyEvent = [];
+    const konami = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66, 13];
+    const correct = "Good Job!";
+
+  $(document).keyup(function(event){
+    console.log(event.keyCode);
+    keyEvent.push(event.keyCode);
+    if(keyEvent.toString() === konami.toString()){
+      return $('#result').append('<video autoplay = "autoplay" loop = "true" src="./img/48Tt.mp4"/>').append("You got unlimited life!")
+    }
+    });
+  })
+
+</script>
+</body>
+</html>

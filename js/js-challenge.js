@@ -360,12 +360,23 @@
 //     } return newArray;
 // }
 
-let elementsTimesTwo = input => input.forEach(num => {
-    let newArray = [];
-    newArray.push(num * 2);
-    return newArray;
-})
+// function elementsTimesTwo (input){
+//     let newArray = [];
+//     input.forEach(num => {
+//         newArray.push(num * 2);
+//     })
+//     return newArray;
+// }
 
-console.log(elementsTimesTwo([5, 10, 15]), [10, 20, 30], "Exercise 84")
-console.log(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
-console.log(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
+
+// console.log(elementsTimesTwo([5, 10, 15]), [10, 20, 30], "Exercise 84")
+// console.log(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
+// console.log(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
+
+function flatten (input){
+    return input.reduce((a, b) => a.concat(b));
+}
+
+console.log(flatten([[1, 2], [3, 4], [5, 6]]), [1, 2, 3, 4, 5, 6], "Exercise 85");
+console.log(flatten([[1, 2, 3], [1, 2, 3], [1, 2, 3]]), [1, 2, 3, 1, 2, 3, 1, 2, 3], "Exercise 85");
+console.log(flatten([["tomato", "mango", "kiwi"], ["eggplant", "broccoli"]]), ["tomato", "mango", "kiwi", "eggplant", "broccoli"], "Exercise 85");
