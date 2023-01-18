@@ -62,6 +62,10 @@
     $('#click').click(() => {
       $('dd').toggleClass('invisible')
     })
+
+    $('dt').on('click',function () {
+      $(this).css('background-color', 'yellow')
+    })
   })
 </script>
 </body>
