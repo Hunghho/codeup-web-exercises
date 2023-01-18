@@ -412,68 +412,108 @@
 
 // example data...
 
-const neighborhood1 = {
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 6},
-        {name: "High School", rating: 8}
-    ]
-};
+// const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 6},
+//         {name: "High School", rating: 8}
+//     ]
+// };
+//
+// const neighborhood2 = {
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "high",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 8},
+//         {name: "High School", rating: 8}
+//     ]
+// }
+//
+// const neighborhood3 = {
+//     neighborhood: "Oak Mountain",
+//     medianHomePrice: 290000,
+//     pool: false,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 8},
+//         {name: "Middle School", rating: 8},
+//         {name: "High School", rating: 8}
+//     ]
+// }
+//
+// const neighborhood4 = {
+//     neighborhood: "Ginormous Acres",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "Elementary School", rating: 9},
+//         {name: "Middle School", rating: 9},
+//         {name: "High School", rating: 9}
+//     ]
+// }
+//
+// function good (input){
+//
+//     let schoolRating = 0;
+//     for (let i = 0; i < input.schools.length ; i += 1){
+//         schoolRating += input.schools[i].rating;
+//     }
+//     return input.medianHomePrice < 300000 && input.crimeRate === "low" && schoolRating >= 24;
+// }
+//
+// console.log(good(neighborhood1)); // returns false due to school rating
+// console.log(good(neighborhood2)); // returns false due to crime rate
+// console.log(good(neighborhood3)); // returns true
+// console.log(good(neighborhood4)); // returns false due to median home price
 
-const neighborhood2 = {
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "high",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 8},
-        {name: "High School", rating: 8}
-    ]
-}
 
-const neighborhood3 = {
-    neighborhood: "Oak Mountain",
-    medianHomePrice: 290000,
-    pool: false,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 8},
-        {name: "Middle School", rating: 8},
-        {name: "High School", rating: 8}
-    ]
-}
-
-const neighborhood4 = {
-    neighborhood: "Ginormous Acres",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "Elementary School", rating: 9},
-        {name: "Middle School", rating: 9},
-        {name: "High School", rating: 9}
-    ]
-}
-
-function good (input){
-
-    let schoolRating = 0;
-    for (let i = 0; i < input.schools.length ; i += 1){
-        schoolRating += input.schools[i].rating;
+const books = [
+    {
+        "title": "Genetic Algorithms and Machine Learning for Programmers",
+        "price": 36.99,
+        "author": "Frances Buontempo"
+    },
+    {
+        "title": "The Visual Display of Quantitative Information",
+        "price": 38.00,
+        "author": "Edward Tufte"
+    },
+    {
+        "title": "Practical Object-Oriented Design",
+        "author": "Sandi Metz",
+        "price": 30.47
+    },
+    {
+        "title": "Weapons of Math Destruction",
+        "author": "Cathy O'Neil",
+        "price": 17.44
     }
-    return input.medianHomePrice < 300000 && input.crimeRate === "low" && schoolRating >= 24;
+]
+
+function getNumberOfBooks (input){
+    let bookPrice = {price: 0}
+    for(let i = 0 ; i < books.length ; i += 1){
+         if(books[i].price > bookPrice.price) {
+             bookPrice.price = books[i].price
+             console.log(bookPrice)
+         }
+    } for (let i = 0 ; i < books.length ; i += 1){
+        if(books[i].price === bookPrice.price){
+            return books[i];
+        }
+    }
 }
 
-console.log(good(neighborhood1)); // returns false due to school rating
-console.log(good(neighborhood2)); // returns false due to crime rate
-console.log(good(neighborhood3)); // returns true
-console.log(good(neighborhood4)); // returns false due to median home price
+console.log(getNumberOfBooks(books), 4, "Exercise 91");
