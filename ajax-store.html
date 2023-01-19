@@ -47,9 +47,8 @@
                     content += '<td>' + data[i].categories.join(', ') + '</td>'
                     content += '</tr>';
                     // outPut.innerHTML += content;
-                    $('#insertProducts').html(content);
                 }
-
+                $('#insertProducts').html(content);
             }
             $.ajax('./data/inventory.json').done(function (data) {
                 myStore(data);
