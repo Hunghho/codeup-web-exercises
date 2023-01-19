@@ -56,15 +56,61 @@
 </dl>
 
 <button id="click" type="button">click</button>
+<div class="other-national-parks">
+<h3 id="arches-national-parks-heading">Arches</h3>
+<ul id="arches">
+  <li>Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+</ul>
+
+<h3 id="badlands-national-parks-heading">Badlands</h3>
+<ul id="badlands">
+  <li>Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+</ul>
+
+<h3 id="carlsbad-national-parks-heading">Carlsbad Cavern</h3>
+<ul id="carlsbad">
+  <li>Arches</li>
+  <li>Badlands</li>
+  <li>Carlsbad Caverns</li>
+  <li>Denali</li>
+</ul>
+</div>
+<button id="click-me" type="button">click</button>
 <script src="./js/jquery-3.6.3.js"></script>
 <script>
   $(document).ready(function(){
+    //button for FAQ
     $('#click').click(() => {
       $('dd').toggleClass('invisible')
     })
-
+    //Hightlight class dt when click
     $('dt').on('click',function () {
       $(this).css('background-color', 'yellow')
+    })
+    //button for li
+    $('#click-me').on('click', function (){
+      $('ul').children()
+              .next()
+              .next()
+              .next()
+              .css('background-color', 'yellow')
+    })
+    //for clicked h3
+    $('h3').on('click', function (){
+      $('ul').each(function (index, element){
+        $(this).css('font-weight', 'bold')
+      })
+    })
+    //for clicked li
+    $('ul').on('click', function (){
+      $('ul').children('li:first-child')
+              .css('color', 'blue')
     })
   })
 </script>

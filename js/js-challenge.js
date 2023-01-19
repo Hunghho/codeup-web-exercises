@@ -411,7 +411,7 @@
 // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
 // example data...
-
+//
 // const neighborhood1 = {
 //     neighborhood: "Lovely Estates",
 //     medianHomePrice: 280000,
@@ -479,41 +479,75 @@
 // console.log(good(neighborhood4)); // returns false due to median home price
 
 
-const books = [
-    {
-        "title": "Genetic Algorithms and Machine Learning for Programmers",
-        "price": 36.99,
-        "author": "Frances Buontempo"
-    },
-    {
-        "title": "The Visual Display of Quantitative Information",
-        "price": 38.00,
-        "author": "Edward Tufte"
-    },
-    {
-        "title": "Practical Object-Oriented Design",
-        "author": "Sandi Metz",
-        "price": 30.47
-    },
-    {
-        "title": "Weapons of Math Destruction",
-        "author": "Cathy O'Neil",
-        "price": 17.44
-    }
-]
+// const books = [
+//     {
+//         "title": "Genetic Algorithms and Machine Learning for Programmers",
+//         "price": 36.99,
+//         "author": "Frances Buontempo"
+//     },
+//     {
+//         "title": "The Visual Display of Quantitative Information",
+//         "price": 38.00,
+//         "author": "Edward Tufte"
+//     },
+//     {
+//         "title": "Practical Object-Oriented Design",
+//         "author": "Sandi Metz",
+//         "price": 30.47
+//     },
+//     {
+//         "title": "Weapons of Math Destruction",
+//         "author": "Cathy O'Neil",
+//         "price": 17.44
+//     }
+// ]
 
-function getNumberOfBooks (input){
-    let bookPrice = {price: 0}
-    for(let i = 0 ; i < books.length ; i += 1){
-         if(books[i].price > bookPrice.price) {
-             bookPrice.price = books[i].price
-             console.log(bookPrice)
-         }
-    } for (let i = 0 ; i < books.length ; i += 1){
-        if(books[i].price === bookPrice.price){
-            return books[i];
-        }
-    }
+// function getNumberOfBooks (input){
+//     let bookPrice = {price: 100}
+//     for(let i = 0 ; i < books.length ; i += 1){
+//          if(books[i].price < bookPrice.price) {
+//              bookPrice.price = books[i].price
+//          }
+//     } for (let i = 0 ; i < books.length ; i += 1){
+//         if(books[i].price === bookPrice.price){
+//             return books[i];
+//         }
+//     }
+// }
+//
+// console.log(getNumberOfBooks(books), 4, "Exercise 91");
+
+// function shortestString (input) {
+//     let shortString = "";
+//     for (let i = 0 ; i < input.length ; i += 1){
+//
+//             if(input[i].length > shortString.length){
+//                 shortString = input[i];
+//             }
+//     }
+//     return shortString;
+// }
+//
+// console.log(shortestString(["kiwi", "mango", "strawberry"]), "kiwi", "Exercise 81");
+// console.log(shortestString(["hello", "everybody"]), "hello", "Exercise 81");
+// console.log(shortestString(["mary", "had", "a", "little", "lamb"]), "a", "Exercise 81");
+
+
+// Create a function, encodeStr, that takes in a string and returns the string of characters with the following substitutions:
+//
+// ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomes ‘$’
+
+function encodeStr (input){
+    return input
+        .replace(/a/gi, "@" )
+        .replace(/S/g, "$")
+        .replace(/i/gi, "1");
 }
 
-console.log(getNumberOfBooks(books), 4, "Exercise 91");
+
+console.log(encodeStr('apple')) // returns ‘@pple’
+console.log(encodeStr('codeup')) // returns ‘codeup’
+console.log(encodeStr('SASS')) // returns ‘$@$$’
+console.log(encodeStr('bike')) // returns ‘b1ke’
