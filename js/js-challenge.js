@@ -539,15 +539,58 @@
 // ‘i’ or ‘I’ becomes ‘1’
 // ‘s’ or ‘S’ becomes ‘$’
 
-function encodeStr (input){
-    return input
-        .replace(/a/gi, "@" )
-        .replace(/S/g, "$")
-        .replace(/i/gi, "1");
+// function encodeStr (input){
+//     return input
+//         .replace(/a/gi, "@" )
+//         .replace(/S/g, "$")
+//         .replace(/i/gi, "1");
+// }
+//
+//
+// console.log(encodeStr('apple')) // returns ‘@pple’
+// console.log(encodeStr('codeup')) // returns ‘codeup’
+// console.log(encodeStr('SASS')) // returns ‘$@$$’
+// console.log(encodeStr('bike')) // returns ‘b1ke’
+
+const shoppingCart = {
+    "tax": .08,
+    "items": [
+        {
+            "title": "orange juice",
+            "price": 3.99,
+            "quantity": 1
+        },
+        {
+            "title": "rice",
+            "price": 1.99,
+            "quantity": 3
+        },
+        {
+            "title": "beans",
+            "price": 0.99,
+            "quantity": 3
+        },
+        {
+            "title": "chili sauce",
+            "price": 2.99,
+            "quantity": 1
+        },
+        {
+            "title": "chocolate",
+            "price": 0.75,
+            "quantity": 9
+        }
+    ]
 }
 
+function getTaxRate(input){
+ return input.items
+    // console.log(Object.keys(input.items).length);
+    // let total = 0;
+    // for(let i = 0 ; i < Object.values(input.items).length ; i += 1){
+    //     total += Object.values(input.items)[i].price / Object.values(input.items).length ;
+    // }
+    // return total;
+}
 
-console.log(encodeStr('apple')) // returns ‘@pple’
-console.log(encodeStr('codeup')) // returns ‘codeup’
-console.log(encodeStr('SASS')) // returns ‘$@$$’
-console.log(encodeStr('bike')) // returns ‘b1ke’
+console.log((getTaxRate(shoppingCart)) , .08 );
