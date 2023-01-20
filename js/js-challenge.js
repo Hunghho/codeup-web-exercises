@@ -552,45 +552,47 @@
 // console.log(encodeStr('SASS')) // returns ‘$@$$’
 // console.log(encodeStr('bike')) // returns ‘b1ke’
 
-const shoppingCart = {
-    "tax": .08,
-    "items": [
-        {
-            "title": "orange juice",
-            "price": 3.99,
-            "quantity": 1
-        },
-        {
-            "title": "rice",
-            "price": 1.99,
-            "quantity": 3
-        },
-        {
-            "title": "beans",
-            "price": 0.99,
-            "quantity": 3
-        },
-        {
-            "title": "chili sauce",
-            "price": 2.99,
-            "quantity": 1
-        },
-        {
-            "title": "chocolate",
-            "price": 0.75,
-            "quantity": 9
-        }
-    ]
-}
+// const shoppingCart = {
+//     "tax": .08,
+//     "items": [
+//         {
+//             "title": "orange juice",
+//             "price": 3.99,
+//             "quantity": 1
+//         },
+//         {
+//             "title": "rice",
+//             "price": 1.99,
+//             "quantity": 3
+//         },
+//         {
+//             "title": "beans",
+//             "price": 0.99,
+//             "quantity": 3
+//         },
+//         {
+//             "title": "chili sauce",
+//             "price": 2.99,
+//             "quantity": 1
+//         },
+//         {
+//             "title": "chocolate",
+//             "price": 0.75,
+//             "quantity": 9
+//         }
+//     ]
+// }
+//
+// function getTaxRate(input){
+//
+//     console.log(Object.keys(input.items).length);
+//     let total = 0;
+//     for(let i = 0 ; i < input.items.length ; i += 1){
+//         total += input.items[i].price;
+//     }
+//     return total / input.items.length;
+// }
+//
+// console.log((getTaxRate(shoppingCart)) , .08 );
 
-function getTaxRate(input){
- return input.items
-    // console.log(Object.keys(input.items).length);
-    // let total = 0;
-    // for(let i = 0 ; i < Object.values(input.items).length ; i += 1){
-    //     total += Object.values(input.items)[i].price / Object.values(input.items).length ;
-    // }
-    // return total;
-}
 
-console.log((getTaxRate(shoppingCart)) , .08 );
