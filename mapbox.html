@@ -80,9 +80,12 @@
 
   // the  geocode method from mapbox-geocoder-utils.js
   geocode("600 Navarro St #350, San Antonio, TX 78205", keys.mapbox).then(function(result) {
-    console.log(result);
-    map.setCenter(result);
-    map.setZoom(18);
+    // console.log(result);
+    // map.setCenter(result);
+    // map.setZoom(18);
+    map.flyTo(
+            {center: result, essential: true}
+    )
   });
 
   // reverseGeocode({lng: -98.4861, lat: 29.4260}, keys.mapbox).then(function(results) {

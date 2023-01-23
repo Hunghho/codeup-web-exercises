@@ -18,44 +18,43 @@
       height: 300px;
       flex-grow: 1;
     }
+    /*.fore-cast {*/
+    /*  display: flex;*/
+    /*  flex-direction: row;*/
+    /*  justify-content: space-between;*/
+    /*  max-width: 100%;*/
+    /*  padding: 0;*/
+    /*}*/
   </style>
 </head>
 <body>
 <div class="page-wrapper">
-  <header class="container">
+  <header class="container container-fluid">
     <div class="row full-width">
-      <div class="column bg-primary">
-        <header class="top">Weather App</header>
+      <div class="col-12 bg-primary d-flex">
+          <h1 class='mb-0 text-white'>Weather App</h1>
+          <span class='d-flex align-items-end ms-auto text-white city'>Current City: San Antonio</span>
       </div>
     </div>
   </header>
-  <main class="container">
+  <main class="container container-fluid">
     <div class="row full-width">
       <div class="column col-12">
-        <div class="row">
-          <div class="col-12">
+        <div class="row full-width">
+          <div class="col-12 mb-4">
             <label for="search" class="search">Place</label>
             <input type="search" class="search" id="search"/>
-            <button type="button" class="btn btn-primary">Find</button>
+            <button type="button" class="button btn btn-primary">Find</button>
           </div>
-          <div class="column col-12">
-            <div class="card" style="width: 18rem;">
-              <div class="card-header">Date</div>
-              <div class="card-body">
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-              </ul>
-              </div>
-            </div>
+          <div class="col-12 d-flex justify-content-evenly fore-cast" id="weatherContent">
+            <!--forecast display-->
           </div>
         </div>
       </div>
 
     </div>
   </main>
-  <div class="container">
+  <div class="container container-fluid">
     <div class="row full-width">
       <div class="column">
         <div id="map"></div>
@@ -92,6 +91,40 @@
     zoom: 8,
     center: [-98.4916, 29.4252]
   });
+  // button function to get search value and update the forecast
+  let marker = new mapboxgl.Marker();
+  $('.button').on('click', function () {
+    geocode($('#search').val(), keys.mapbox).then(function(result) {
+      console.log(result);
+      // map.setCenter(result);
+      // map.setZoom(18);
+      map.flyTo(
+              {center: result, essential: true}
+
+      )
+
+              marker.setLngLat(result)
+              .addTo(map)
+
+      $.get('https://api.openweathermap.org/data/2.5/forecast', {
+        lat: result[1],
+        lon: result[0],
+        appid: keys.justinKey,
+        units: 'imperial'
+      }).done(function(data) {
+        // can be used to get forecast conditions at current time in increments of 24 hours
+        //   for (let i = 0; i < data.list.length; i += 8) {
+        //     console.log(data.list[i]);
+        //   }
+        // }).fail(function(jqXhr, status, error) {
+        //   console.log(jqXhr);
+        //   console.log(status);
+        //   console.log(error);
+
+        foreCast(data);
+      });
+    });
+  })
 
   // weather map api
   $.get('https://api.openweathermap.org/data/2.5/forecast', {
@@ -101,15 +134,38 @@
     units: 'imperial'
   }).done(function(data) {
     // can be used to get forecast conditions at current time in increments of 24 hours
-    for (let i = 0; i < data.list.length; i += 8) {
-      console.log(data.list[i]);
-    }
-  }).fail(function(jqXhr, status, error) {
-    console.log(jqXhr);
-    console.log(status);
-    console.log(error);
+    // for (let i = 0; i < data.list.length; i += 8) {
+    //   console.log(data.list[i]);
+    // }
+  // }).fail(function(jqXhr, status, error) {
+  //   console.log(jqXhr);
+  //   console.log(status);
+  //   console.log(error);
+
+    foreCast(data);
   });
+
+  // append to html
+  function foreCast(data){
+    let content = '';
+    for (let i = 0 ; i < data.list.length ; i += 8){
+
+      content += `<div class='card' style="width: 18rem;">
+                   <div class="card-header">${data.list[i].dt_txt}</div>
+                   <div class="card-body">
+                   <ul>
+                   <li class="list-group-item">${data.list[i].main.temp_min}/${data.list[i].main.temp_max}</li>
+                   <li class="list-group-item">Description: ${data.list[i].weather[0].description}</li>
+                   <li class="list-group-item">Humidity: ${data.list[i].main.humidity}</li>
+                   <li class="list-group-item">Wind: ${data.list[i].wind.speed}</li>
+                   <li class="list-group-item">Pressure: ${data.list[i].main.pressure}</li>
+                   </ul>
+                   </div>
+                   </div>`
+    }
+    $('#weatherContent').html(content);
+  }
+
 })();
 </script>
-</body>
 </html>
