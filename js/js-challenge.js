@@ -596,3 +596,17 @@
 // console.log((getTaxRate(shoppingCart)) , .08 );
 
 
+// function removeVowels(input){
+//     let vowels = "aeiou";
+//     let noVowels = "";
+//     for(let i = 0 ; i < input.length ; i += 1){
+//         if(vowels.indexOf(input[i].toLowerCase()) === -1){
+//             noVowels += input[i];
+//         }
+//     } return noVowels;
+// }
+//
+// console.log((removeVowels("banana")), "bnn");
+// console.log((removeVowels("ubuntu")), "bnt");
+// console.log((removeVowels("mango")), "mng");
+// console.log((removeVowels("QQQQ")), "QQQQ");

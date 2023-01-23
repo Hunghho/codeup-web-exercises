@@ -51,12 +51,12 @@ let features = [
             .setPopup(popup)
     })
 
-    map.addControl(
-        new MapboxDirections({
-            accessToken: keys.mapbox
-        }),
-        'top-left'
-    );
+    // map.addControl(
+    //     new MapboxDirections({
+    //         accessToken: keys.mapbox
+    //     }),
+    //     'top-left'
+    // );
 
 // let marker = new mapboxgl.Marker()
 //     .setLngLat([-98.32332, 29.55791])
