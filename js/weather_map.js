@@ -76,7 +76,7 @@
     $.get('https://api.openweathermap.org/data/2.5/forecast', {
         lat: 29.4252,
         lon: -98.4916,
-        appid: keys.justinKey,
+        appid: keys.weatherMap,
         units: 'imperial'
     }).done(function(data) {
         foreCast(data);
