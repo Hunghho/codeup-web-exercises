@@ -8,8 +8,45 @@
         zoom: 8,
         center: [-98.4916, 29.4252]
     });
+    // marker
+    let marker = new mapboxgl.Marker({ color: 'black', rotation: 45,
+        draggable: true
+    });
+    //get weather data from dragged marker
+    function onDragEnd(){
+        const lngLat = marker.getLngLat();
+        console.log(lngLat);
+        $.get('https://api.openweathermap.org/data/2.5/forecast', {
+            lat: lngLat.lat,
+            lon: lngLat.lng,
+            appid: keys.weatherMap,
+            units: 'imperial'
+        }).done(function(data) {
+            foreCast(data);
+        })
+
+    }
+    marker.on('dragend', onDragEnd);
+
+    // add marker on click
+    function add_marker (event) {
+        const coordinates = event.lngLat;
+        marker.setLngLat(coordinates).addTo(map);
+
+        $.get('https://api.openweathermap.org/data/2.5/forecast', {
+            lat: coordinates.lat,
+            lon: coordinates.lng,
+            appid: keys.weatherMap,
+            units: 'imperial'
+        }).done(function(data) {
+            foreCast(data);
+        })
+
+    }
+    map.on('click', add_marker);
+
     // button function to get search value and update the forecast
-    let marker = new mapboxgl.Marker();
+
     $('.button').on('click', function () {
         let searchResult = $('#search').val();
         // replace the current city
@@ -35,7 +72,7 @@
         });
     })
 
-    // Weather map api
+    // Weather map api page load
     $.get('https://api.openweathermap.org/data/2.5/forecast', {
         lat: 29.4252,
         lon: -98.4916,
@@ -50,7 +87,7 @@
         let content = '';
         for (let i = 0 ; i < data.list.length ; i += 8){
             let newDate = new Date(data.list[i].dt * 1000);
-            content += `<div class='card m-2' style="width: 18rem;">
+            content += `<div class='card m-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded' style="width: 18rem;">
                    <div class="card-header text-center">${newDate.toLocaleDateString("en-US")}</div>
                    <div class="card-body">
                    <ul class="p-0">
