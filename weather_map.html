@@ -113,7 +113,7 @@
       $.get('https://api.openweathermap.org/data/2.5/forecast', {
         lat: result[1],
         lon: result[0],
-        appid: keys.justinKey,
+        appid: keys.weatherMap,
         units: 'imperial'
       }).done(function(data) {
         // can be used to get forecast conditions at current time in increments of 24 hours
