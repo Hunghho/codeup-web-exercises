@@ -4,7 +4,7 @@
     mapboxgl.accessToken = keys.mapbox;
     let map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
+        style: 'mapbox://styles/hunghoh/cldand30g007101pc3hy7zluw',
         zoom: 8,
         center: [-98.4916, 29.4252]
     });
@@ -88,7 +88,7 @@
         for (let i = 0 ; i < data.list.length ; i += 8){
             let newDate = new Date(data.list[i].dt * 1000);
             content += `<div class='card m-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded' style="width: 18rem;">
-                   <div class="card-header text-center">${newDate.toLocaleDateString("en-US")}</div>
+                   <div class="card-header text-center">${newDate.toLocaleDateString("en-US", {weekday: 'short'})}-${newDate.toLocaleDateString("en-US")}</div>
                    <div class="card-body">
                    <ul class="p-0">
                    <li class="list-group-item text-center">${data.list[i].main.temp_min}${String.fromCharCode(176)}F / ${data.list[i].main.temp_max}${String.fromCharCode(176)}F</li>
