@@ -43,7 +43,7 @@
         <div class="row full-width">
           <div class="col-12 mb-4">
             <label for="search" class="search">Place</label>
-            <input type="search" class="search" id="search"/>
+            <input type="search" class="searchMe p-1" id="search"/>
             <button type="button" class="button btn btn-primary">Find</button>
           </div>
           <div class="col-12 d-flex justify-content-evenly fore-cast" id="weatherContent">
@@ -94,18 +94,22 @@
   // button function to get search value and update the forecast
   let marker = new mapboxgl.Marker();
   $('.button').on('click', function () {
-    geocode($('#search').val(), keys.mapbox).then(function(result) {
-      console.log(result);
+    let searchResult = $('#search').val();
+    // replace the current city
+    let newCity = `<span class='d-flex align-items-end ms-auto text-white city'>Current City: ${searchResult}</span>`
+    $('.city').replaceWith(newCity);
+    // geocode location from search result
+    geocode(searchResult, keys.mapbox).then(function(result) {
+      // console.log(result);
       // map.setCenter(result);
       // map.setZoom(18);
+
       map.flyTo(
               {center: result, essential: true}
-
       )
-
               marker.setLngLat(result)
               .addTo(map)
-
+      // getting weather data from search result
       $.get('https://api.openweathermap.org/data/2.5/forecast', {
         lat: result[1],
         lon: result[0],
@@ -149,12 +153,14 @@
   function foreCast(data){
     let content = '';
     for (let i = 0 ; i < data.list.length ; i += 8){
-
-      content += `<div class='card' style="width: 18rem;">
-                   <div class="card-header">${data.list[i].dt_txt}</div>
+      let newDate = new Date(data.list[i].dt * 1000);
+      content += `<div class='card m-2' style="width: 18rem;">
+                   <div class="card-header text-center">${newDate.toLocaleDateString("en-US")}</div>
                    <div class="card-body">
-                   <ul>
-                   <li class="list-group-item">${data.list[i].main.temp_min}/${data.list[i].main.temp_max}</li>
+                   <ul class="p-0">
+                   <li class="list-group-item text-center">${data.list[i].main.temp_min}${String.fromCharCode(176)}F / ${data.list[i].main.temp_max}${String.fromCharCode(176)}F</li>
+                   <li class="list-group-item text-center"><img alt="icon" src='http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png'/></li>
+                   <hr>
                    <li class="list-group-item">Description: ${data.list[i].weather[0].description}</li>
                    <li class="list-group-item">Humidity: ${data.list[i].main.humidity}</li>
                    <li class="list-group-item">Wind: ${data.list[i].wind.speed}</li>

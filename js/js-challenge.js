@@ -610,3 +610,6 @@
 // console.log((removeVowels("ubuntu")), "bnt");
 // console.log((removeVowels("mango")), "mng");
 // console.log((removeVowels("QQQQ")), "QQQQ");
+
+let s = new Date(1504095567183).toLocaleDateString("en-US")
+console.log(s)
