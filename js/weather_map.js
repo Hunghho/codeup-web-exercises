@@ -22,6 +22,8 @@
             appid: keys.weatherMap,
             units: 'imperial'
         }).done(function(data) {
+            let newCity = `<span class='d-flex align-items-end ms-auto text-white city'>Current Location: ${data.city.name}</span>`
+            $('.city').replaceWith(newCity);
             foreCast(data);
         })
 
@@ -39,6 +41,8 @@
             appid: keys.weatherMap,
             units: 'imperial'
         }).done(function(data) {
+            let newCity = `<span class='d-flex align-items-end ms-auto text-white city'>Current Location: ${data.city.name}</span>`
+            $('.city').replaceWith(newCity);
             foreCast(data);
         })
 
@@ -50,7 +54,7 @@
     $('.button').on('click', function () {
         let searchResult = $('#search').val();
         // replace the current city
-        let newCity = `<span class='d-flex align-items-end ms-auto text-white city'>Current City: ${searchResult}</span>`
+        let newCity = `<span class='d-flex align-items-end ms-auto text-white city'>Current Location: ${searchResult}</span>`
         $('.city').replaceWith(newCity);
         // geocode location from search result
         geocode(searchResult, keys.mapbox).then(function(result) {
@@ -79,6 +83,9 @@
         appid: keys.weatherMap,
         units: 'imperial'
     }).done(function(data) {
+        for (let i = 0; i < data.list.length; i += 8) {
+            console.log(data);
+        }
         foreCast(data);
     });
 
@@ -87,6 +94,8 @@
         let content = '';
         for (let i = 0 ; i < data.list.length ; i += 8){
             let newDate = new Date(data.list[i].dt * 1000);
+            let sunrise = new Date(data.city.sunrise * 1000);
+            let sunset = new Date(data.city.sunset * 1000);
             content += `<div class='card m-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded' style="width: 18rem;">
                    <div class="card-header text-center">${newDate.toLocaleDateString("en-US", {weekday: 'short'})}-${newDate.toLocaleDateString("en-US")}</div>
                    <div class="card-body">
@@ -98,6 +107,9 @@
                    <li class="list-group-item">Humidity: ${data.list[i].main.humidity}</li>
                    <li class="list-group-item">Wind: ${data.list[i].wind.speed}</li>
                    <li class="list-group-item">Pressure: ${data.list[i].main.pressure}</li>
+                   <hr>
+                   <li class="list-group-item">Sunrise: ${sunrise.toLocaleTimeString("en-US")}</li>
+                   <li class="list-group-item">Sunset: ${sunset.toLocaleTimeString('en-US')}</li>
                    </ul>
                    </div>
                    </div>`

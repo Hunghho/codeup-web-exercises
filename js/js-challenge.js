@@ -614,33 +614,33 @@
 // Make a function, reverseStrings, that takes in an array of objects and reverses the value of the 'str' properties.
 
 
-    const strs = [
-    {
-        id: 1,
-        str: 'hello'
-    },
-    {
-        id: 2,
-        str: 'world'
-    },
-    {
-        id: 3,
-        str: 'codeup'
-    },
-    {
-        id: 4,
-        str: 'x'
-    }
-]
-
-function reverseStrings(input){
-        for (let i = 0 ; i < input.length ; i += 1){
-            // console.log(input[i].str.split('').reverse().join(''))
-            input[i].str = input[i].str.split('').reverse().join('');
-        }
-    return input;
-}
-console.log(reverseStrings(strs));
+//     const strs = [
+//     {
+//         id: 1,
+//         str: 'hello'
+//     },
+//     {
+//         id: 2,
+//         str: 'world'
+//     },
+//     {
+//         id: 3,
+//         str: 'codeup'
+//     },
+//     {
+//         id: 4,
+//         str: 'x'
+//     }
+// ]
+//
+// function reverseStrings(input){
+//         for (let i = 0 ; i < input.length ; i += 1){
+//             // console.log(input[i].str.split('').reverse().join(''))
+//             input[i].str = input[i].str.split('').reverse().join('');
+//         }
+//     return input;
+// }
+// console.log(reverseStrings(strs));
 // reverseStrings(strs) // returns...
 //
 //     [
