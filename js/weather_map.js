@@ -97,15 +97,15 @@
             let sunrise = new Date(data.city.sunrise * 1000);
             let sunset = new Date(data.city.sunset * 1000);
             content += `<div class='card m-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded' style="width: 18rem;">
-                   <div class="card-header text-center">${newDate.toLocaleDateString("en-US", {weekday: 'short'})}-${newDate.toLocaleDateString("en-US")}</div>
+                   <div class="card-header text-center">${newDate.toLocaleDateString("en-US", {weekday: 'long'})}<br>${newDate.toLocaleDateString("en-US")}</div>
                    <div class="card-body">
                    <ul class="p-0">
-                   <li class="list-group-item text-center">${data.list[i].main.temp_min}${String.fromCharCode(176)}F / ${data.list[i].main.temp_max}${String.fromCharCode(176)}F</li>
+                   <li class="list-group-item text-center"><i class="fa-solid fa-temperature-three-quarters"></i> ${data.list[i].main.temp_min}${String.fromCharCode(176)}F / ${data.list[i].main.temp_max}${String.fromCharCode(176)}F</li>
                    <li class="list-group-item text-center"><img alt="icon" src='http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png'/></li>
                    <hr>
                    <li class="list-group-item">Description: ${data.list[i].weather[0].description}</li>
                    <li class="list-group-item">Humidity: ${data.list[i].main.humidity}</li>
-                   <li class="list-group-item">Wind: ${data.list[i].wind.speed}</li>
+                   <li class="list-group-item"><i class="fa-solid fa-wind"></i> ${data.list[i].wind.speed}</li>
                    <li class="list-group-item">Pressure: ${data.list[i].main.pressure}</li>
                    <hr>
                    <li class="list-group-item">Sunrise: ${sunrise.toLocaleTimeString("en-US")}</li>
