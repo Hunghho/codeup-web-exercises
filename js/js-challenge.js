@@ -661,3 +661,53 @@
 //             str: 'x'
 //         }
 //     ]
+
+
+
+
+// averageSales([
+//     {name: 'Jim Halpert', sales: 100},
+//     {name: 'Dwight Schrute', sales: 50},
+//     {name: 'Andy Bernard', sales: 150},
+// ])
+//
+// function averageSales (input){
+//
+//   return input.sales;
+// }
+
+// Create a function, filterList, that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+// function filterList(num){
+//     let numbers = [];
+//     for (let i = 0 ; i < num.length ; i += 1){
+//         if(typeof num[i] !== "string"){
+//             numbers.push(num[i]);
+//         }
+//     } return numbers;
+//
+// }
+
+// function convertNameToObject (input){
+//     let newSplit = input.split(" ")
+//         console.log(newSplit);
+//     let newObj = {firstName: newSplit[0], lastName: newSplit[1]}
+//     console.log(newObj);
+//
+// }
+// convertNameToObject('Harry Potter') // {firstName: 'Harry', lastName: 'Potter'}
+// convertNameToObject('Ron Weasley') // {firstName: 'Ron', lastName: 'Weasley'}
+
+// function capitalizeName (input){
+//     let nameSplit = input.split(" ");
+//     for (let i = 0 ; i < nameSplit.length ; i += 1){
+//         nameSplit[i] = nameSplit[i].charAt(0).toUpperCase() + nameSplit[i].slice(1);
+//     }
+//     return nameSplit.join(' ')
+//
+// }
+// //     For this problem, you may assume that the function will only ever be called with a string that has two words separated by a single space.
+// //
+// capitalizeName('ron weasley') // "Ron Weasley"
+// capitalizeName('Harry Potter') // "Harry Potter"
+// capitalizeName('Nathan drake') // "Nathan Drake"

@@ -5,8 +5,8 @@
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/hunghoh/cldand30g007101pc3hy7zluw',
-        zoom: 8,
-        center: [-98.4916, 29.4252]
+        zoom: 11,
+        center: [-98.25617, 29.56699]
     });
     // marker
     let marker = new mapboxgl.Marker({ color: 'black', rotation: 45,
