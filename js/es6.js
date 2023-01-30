@@ -30,6 +30,7 @@ const users = [
 ];
 
 // TODO: fill in your name and email and add some programming languages you know
+// to the languages array
 users.push({
     name: 'hung',
     email: 'hung.ho902@gmail.com',

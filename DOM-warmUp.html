@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Warm Up</title>
+    <style>
+        .backGround {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button>click</button>
+<script>
+    "use strict";
+    const btn = document.querySelector('button');
+    const bodyColor = document.querySelector('body')
+    btn.addEventListener('click', () => {
+        bodyColor.classList.toggle('backGround');
+    })
+
+</script>
+</body>
+</html>

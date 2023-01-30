@@ -711,3 +711,37 @@
 // capitalizeName('ron weasley') // "Ron Weasley"
 // capitalizeName('Harry Potter') // "Harry Potter"
 // capitalizeName('Nathan drake') // "Nathan Drake"
+//
+// const numbers = [1, 2, 3, 4, 5];
+//
+// const sum = numbers.reduce((accumulation, currentNumber) => {
+//     return accumulation + currentNumber;
+// }, 0);
+//
+// console.log(sum);
+
+// const salesPeople = [
+//     {name: 'Jim Halpert', sales: 100},
+//     {name: 'Dwight Schrute', sales: 50},
+//     {name: 'Andy Bernard', sales: 150},
+// ];
+//
+// const totalSales = salesPeople.reduce((total, person) => {
+//     return total + person.sales;
+// }, 0);
+//
+// console.log(totalSales)
+const words = "SMFegnlishasnD"
+const wordstwo = "SMFegnlishasnD"
+// console.log(words.includes('english'))
+
+if(words.includes('english')){
+}
+// const wordSplit = words.split('english')
+//
+// // const input = ['e', 'n', 'g', 'l', 'i', 's', 'h']
+//
+// const output = wordSplit.filter(word => word === "")
+//
+// console.log(wordSplit)
+
